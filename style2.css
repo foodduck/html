@@ -1,0 +1,36 @@
+@charset "utf-8";
+    * {margin:0; padding: 0;}
+    body, html {width: 100%;}
+    ul {list-style: none;}
+    a {text-decoration: none;}
+    
+    .wrap {width: 100%;}
+    .hd {width: 100%; background: rgba(30,30,30,0.85); height:120px;
+    position:fixed; top:0; left:0; z-index:99;}
+    .hd_wrap {width: 1000px; margin:0 auto; }
+    .tnb { width: 100%; }
+    .tnb .left {float:left;}
+    .tnb .right {float:right;}
+    .tnb li {float:left; margin-top:20px;}
+    .tnb .left li {margin-right: 20px;}
+    .tnb .right li {margin-left: 20px;}
+    .tnb li a {color:white; font-size:16px;}
+    .logo { display:block; position:absolute; top:5px; left:50%; margin-left:-50px;}
+    .gnb { clear:both; width: 100%; }
+    .gnb >ul:before { content:""; display:block; background:rgba(22, 22, 22, 0.8);
+width: 100vw; height: 180px; position:absolute; z-index:98; left:0; top:119px;
+visibility:hidden; opacity:0; transition:0.5s; }
+    .gnb:hover > ul:before {visibility:visible; opacity:1;}
+    .gnb>ul>li {float:left; margin-top: 36px; width:20%; position:relative; }
+    .ft { background-color: #222; color:#fff; width:100%; height: 100px; }
+    .ft_wrap { width: 1000px; margin: 0 auto; padding-top:15px; }
+    .gnb li a.dp1 {display: block; height: 42px; line-height: 42px; color:white;
+       text-align:center; background-color:#222; }
+    .gnb li:hover a.dp1 { background-color:orange; }
+    .gnb li .sub { visibility:hidden; opacity:0; transition:0.5s; position:absolute;
+       width:200px; z-index:120;}
+           /* 한꺼번에 li가 모두 열리게 하기: li:hover를 gnb:hover로 바꾼다*/
+    .gnb:hover li .sub { visibility: visible; opacity:1; }
+    .gnb .sub li { clear:both; height: 40px; line-height: 40px; }
+    .gnb .sub li a { display:block; height: 40px; line-height: 40px; color:#eee; padding-left:20px; }
+    .gnb .sub li:hover a { color:orange; }

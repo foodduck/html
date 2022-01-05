@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.초기화 */
+        * { margin: 0; padding: 0; }
+        body, html { width: 100%; }
+        ul { list-style: none; }
+        a {text-decoration: none; }
+        /*6.헤더를 맞춘다.*/
+        .hd_wrap {width:1000px; margin-top:20px; }
+        /* 2.인라인요소는 크기를 지정할 수 없다.(img 제외) img를 블록으로 바꾼다.*/
+        .logo { display: block; width:120px; height: 60px; background-color: #333; 
+            line-height: 60px; text-align: center; color:aliceblue; float:left;}
+        .tnb {float:right; }
+        .tnb li {float:left; } /*li를 일렬로*/
+        .tnb li a {color:#333; display: block; padding:18px 25px;} /*a 태그는 기본적으로 파란색*/
+        .gnb {clear:both; }
+        .gnb li {width:20%; float:left;}
+        .gnb li a.dp1 {display: block; line-height: 40px; background-color: #333; 
+            color:#fff; text-align: center;}
+         /* 3.hd_wrap에 width를 주고 전체의 크기를 조절한다.*/   
+        .gnb li:hover a.dp1 {background-color: deepskyblue;}
+        
+        /*4.서브메뉴는 부모의 100의 5분의 1인 200px*/
+        .vs {width:1000px; margin:0 auto;}
+        .content {clear:both;}
+        /*5.li의 부모인 sub에 display:none을 적용해야 자식이 안 보인다.*/
+        .gnb li .sub { display: none; position:absolute; z-index: 99; }
+        /*6.li에 hover태그를 적용시켜야 하위메뉴에 마우스를 올려도 색이 유지된다.*/
+        /*absolute*/
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="" class="logo">
+                <img src="./img/logo.gif" alt=""> 
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="">상단1</a></li>
+                    <li><a href="">상단2</a></li>
+                    <li><a href="">상단3</a></li>
+                    <li><a href="">상단4</a></li>
+                    <li><a href="">상단5</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="">메인메뉴1</a>
+                        <ul class="sub">
+                            <li>서브메뉴1</li>
+                            <li>서브메뉴2</li>
+                            <li>서브메뉴3</li>
+                            <li>서브메뉴4</li>
+                            <li>서브메뉴5</li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <a href="">메인메뉴2</a>
+                        <ul class="sub">
+                            <li>서브메뉴1</li>
+                            <li>서브메뉴2</li>
+                            <li>서브메뉴3</li>
+                            <li>서브메뉴4</li>
+                            <li>서브메뉴5</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">메인메뉴3</a>
+                        <ul class="sub">
+                            <li>서브메뉴1</li>
+                            <li>서브메뉴2</li>
+                            <li>서브메뉴3</li>
+                            <li>서브메뉴4</li>
+                            <li>서브메뉴5</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">메인메뉴4</a>
+                        <ul class="sub">
+                            <li>서브메뉴1</li>
+                            <li>서브메뉴2</li>
+                            <li>서브메뉴3</li>
+                            <li>서브메뉴4</li>
+                            <li>서브메뉴5</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">메인메뉴5</a>
+                        <ul class="sub">
+                            <li>서브메뉴1</li>
+                            <li>서브메뉴2</li>
+                            <li>서브메뉴3</li>
+                            <li>서브메뉴4</li>
+                            <li>서브메뉴5</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav> 
+        </div> 
+    </header>
+</body>
+</html>

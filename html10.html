@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 속성1</title>
+<style>
+    /*
+    1.배경관련 속성
+
+    배경색: background-color: 컬러명 or RGB_HEX코드 6자리
+     or RGB_HEX코드 3자리 or rgb() or rgba() hsl() or hsla()
+        (red)(green)(blue)             1:불투명 0: 투명
+     red #ff    00    00  = #f00 = rgb(255,0,0) = rgba(255,0,0,투명도 1~0)
+     색상환,채도,명도 /투명도
+     hsl(0, 100%, 50%) hsla(0, 100%, 50%, 1)
+
+     배경이미지: background-image:url("파일위치"), url("파일위치2"),..
+     배경위치: background-position: left/center/right/px단위숫자/%단위숫자 + top/center/bottom
+     background-position: left top (가로위치 세로위치)
+     배경크기: background-size: auto/px단위숫자/%단위숫자/cover/contain
+     가로크기                  세로크기
+     auto/px단위숫자/%단위숫자 auto/px단위숫자/%단위숫자
+     배경이미지가 2개라면 background-position: center center, top left
+     background-size:auto, 100% 100%
+
+     배경반복:background-repeat:no-repeat/repeat-x/repeat-y/repeat
+     배경합성: background-blend-mode: normal/multiply/screen/overley/darken/lighten/
+     color-dodge/saturation/color/luminosity
+     배경의 위치 기준: background-origin: padding box/border-box/content-box
+     배경 이미지 고정/유동: background-attachment: scroll/fixed
+     background 통합속성
+     background:배경색 배경이미지 포지션/크기 배경반복 배경위치기준 배경위치고정
+
+     통합속성과 세부속성을 같이 사용할 때
+     background-color:red; background:url("./img./test1.jpg"); (X)
+     background:url("./img./test1.jpg"); background-color:red; (O)
+     즉 통합속성을 먼저 설정하고, 세부속성을 설정해야 한다.
+     
+     2.글자와 문단에 대한 속성
+     글자색: 배경색과 설정 동일
+     글꼴: font-family:"폰트명1"[,"대체폰트명2","대체폰트명3"]
+     font-family:"나눔고딕", "NanumGothic", sans-serif
+     sans-serif와 같이 기본으로 제공해주는 폰트: 기본 폰트
+     serif, cursive, monospace, fantasy
+     3.글자크기: font-size: pt단위숫자/px단위숫자/%단위숫자/em단위숫자/rem단위숫자/
+     mm단위숫자/inch단위숫자..
+     %단위는 현재 영역의 크기에 비례한 크기: 영역의 크기가 100px이고 font-size: 50% 라면
+     50px가 글자크기가 된다.
+     em단위는 태그마다 다른 기본 글자 크기의 배수: p요소의 경우 14px가 기본 크기이다.
+     3em = 42px 가 된다.
+     실제 반영은 브라우저에 따라 서로 다른 크기가 된다.
+     글자 스타일: font-style: normal/italic/oblique
+     글자 두께: font-weight: normal(400)/lighter(200)/
+     bolder(500,600)/bold(700)/100~900(100단위씩)
+     폰트마다 지원하는 글자 두께가 다르므로 적용이 안되거나 원하는대로 되지 않을 수 있다.
+     기타 폰트 관련 속성: font-kernning, font-stretch, font-variant
+     텍스트 정렬: test-align: left/right/center/justify/initial/inherit/
+     줄 속성: text-deoration: none/underline/overline/line-through
+     첫 번째 줄 들여쓰기: text-indent: px단위숫자 (양수:들여쓰기, 음수:내어쓰기)
+     글자 흘러넘침: text-overflow: clip/ellipsis/문자열
+     글줄(문단)에 대한 처리: white-space: normal/nowrap/pre
+     자간: letter-spacing: px단위숫자/em단위숫자
+     어간: word-spacing: px단위숫자
+     한줄 끝 처리: line-break: normal/break-all/keep-all/break-word
+     단어 끝 어리: word-break: normal/break-all/keep-all/break-word
+     기타 텍스트 속성: hyphens(영문단어를 하이픈으로 연결처리)
+     text-transform(영문 대소문자 변환)
+     글자 그림자: text-shadow: 가로 그림자크기 세로 그림자크기 블러영역크기 그림자색
+     */
+</style>
+<style>
+    body {background-color:blueviolet; background-image:url(./img/test1.jpg),
+    url(./img/hawaii.jpeg); background-size:300px auto, auto;
+    background-position:center center; background-repeat: no-repeat;
+    background-attachment:fixed, scroll; }
+    /* background:url("./img/test1.jpg")를 뒤에 넣으면 세부속성을 먼저 넣게 되버린다.*/
+    .song {text-indent: 50px; text-decoration:overline; 
+            text-overflow: ellipsis; white-space:wrap; hyphens:manual}
+</style>
+</head>
+<body>
+    <div class="wrap" style="width:100px; height:150px">
+        <p class="song">
+            Old Alexander had a farm Old Alexander had a farm 
+            Old Alexander had a farm Old Alexander had a farm
+            Old Alexander had a farm Old Alexander had a farm
+            Old Alexander had a farm Old Alexander had a farm
+            대한 민국 만세 대한 민국 만세 대한 민국 만세 대한 민국 만세 
+            대한 민국 만세 대한 민국 만세 대한 민국 만세 대한 민국 만세 
+            대한 민국 만세 대한 민국 만세 대한 민국 만세 대한 민국 만세 
+            대한 민국 만세 대한 민국 만세 대한 민국 만세 대한 민국 만세 
+        </p>
+    </div>
+</body>
+</html>
