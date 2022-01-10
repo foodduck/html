@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 선언과 스코프</title>
+    
+    <script>
+    
+    </script>
+</head>
+<body>
+    <div id="result">
+
+    </div>
+    <script>
+        //primitive type
+        var num = 1004;     //golbal scope
+        var name = "김";
+        var data;   //undefined
+        var pass = true;    //boolean
+
+        alert(typeof num);
+        alert(typeof name);
+        alert(typeof data);
+        alert(typeof pass);
+
+        //object type
+        var now = Date();   //Date(자바스크립트의 데이터 내장 객체)
+        //Number, Math, Date, String, Array, Audio, Video, File, Interval
+        var loc = location.href     //location(자바스크립트의 BOM 객체)
+        //history, navigator, window, screen, location
+        // var kbs = document.getElementById("kbs").textContent;   //자바스크립트의 DOM 객체(태그)
+        //자바스크립트 표준객체 = 내장객체(데이터 내장 객체, BOM 객체, DOM 객체)
+        var arr = [1, "kim", 33];   //Array
+        // var obj = {num="2", name="kim", age="33"};    //Customize Object
+
+        alert(typeof now);
+        alert(typeof loc);
+        alert(typeof kbs);
+        alert(typeof arr);
+        alert(typeof obj);
+
+        function fnc1() {
+            var num = 20;   //지역변수: local scope
+            alert("NUM: "+num);
+        }
+        var fnc2 = function() {  //리턴X, 매개변수X
+            var num = 50;   //지역변수: local scope
+            alert("NUM: "+num);
+        }
+
+        fnc1();
+        fnc2();
+
+        function fnc3() {   //리턴O, 매개변수X
+            return "hello javascript";
+        }
+        var y = 0;
+        function fnc4(x) {  //리턴X, 매개변수O
+            y= x*x;
+        }
+        var x=0; var y =0;
+
+        function fnc5(x, y) { //리턴O, 매개변수O
+            return x*y
+        }
+        alert(fnc3());
+        fnc4(40);
+        alert(y);
+        alert(fnc5(30,20));
+    </script>
+</body>
+</html>

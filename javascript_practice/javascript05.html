@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 초기화와 형변환</title>
+    
+    <script>
+       
+    </script>
+</head>
+<body>
+    <div class="result">
+
+    </div>
+    <script>
+        var age;    //선언만
+        //alert(age);   //값이 undefined 이므로 에러 발생
+        age = 42;   //초기화
+        var num = 100;  //선언과 초기화를 동시에
+        var age = 29; //primitive 타입도 다시 선언할 수 있다.
+        let kbs = 30;   //한 번만 선언이 가능하다. 값은 변경 가능
+        const pi = 3.141592; //한번만 선언이 가능하고 값도 변경할수 없다.(상수 선언)
+        var data0 = 10; //data0은 number
+        data0 = data0 + "김";   //data0은 String으로 묵시적 형변환(AutoCasting)이 이루어짐
+        data1 = "20";   //문자열
+        data2 = "true" //문자열
+        data3 = true //불리언
+        data4 = 20; //숫자
+        data5 = 3.1415 //숫자 - 실수
+        data6 = "6.2323"
+        alert(typeof data1);
+        alert(typeof Number(data1));    //Number는 숫자형문자열을 숫자로 변환
+        alert(typeof parseFloat(data6));  //parseFloat는 실수형문자열을 실수로 변환
+        alert(typeof parseInt(data6));  //parseInt는 숫자형 문자열을 정수로 변환
+        alert(typeof data2);
+        alert(typeof Boolean(data2));   //Boolean은 논리형문자열을 논리형으로 형변환
+        alert(typeof String(data3));    //String은 모든 데이터를 문자열로 형변환
+        //data123.toExponential(): 지수형을 문자열로 변환
+        //data123.toFixed(): 실수의 특정 소수점이하 자리수만큼 문자열로 변환
+        //data123.toPrecision(): 지정한 유효 자리수만큼 문자열로 변환
+        //data123.toString(): 어떠한 데이터든 문자열로 형변환
+        alert(typeof Object(data5));    //Object는 모든 데이터를 객체형으로 형변환
+    </script>
+</body>
+</html>

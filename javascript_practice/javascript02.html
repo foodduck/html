@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트02</title>
+    
+    <script>
+        //자바스크립트의 역할
+        //1.html의 내용을 추가하거나 변경/제거할 수 있다.
+        //2.html의 속성을 추가하거나 변경/제거할 수 있다.
+        //3.html의 스타일을 추가하거나 변경/제거할 수 있다.
+        //4.html 요소에 이벤트를 추가하거나 변경/제거할 수 있다.
+        //5.브라우저를 제어할 수 있다.
+        //6.웹 서버나 다른 서버언어와 데이터를 교환(송신/수신)할 수 있다.
+        //7.다른 프로젝트에서 사용할 수 있는 플러그인을 제작할 수 있다.
+
+        //자바스크립트의 특징
+        //한 문장 당 세미콜론(;) 으로 끝난다.
+        //변수, 함수, 객체 등(식별자)은 예약어를 사용할 수 없으며, 대소문자를 구분하며, 
+        //영문으로 시작해야 함
+        //상수(리터널)은 값을 표현하며, 숫자, 문자, 논리 값으로 구분할 수 있다.
+        //식별자 작성 규칙은 카멜 방식 또는 언더스코어 방식을 활용하는 것이 관례이다.
+        //변수나 객체의 선언 시에는 var 키워드를 사용한다.
+        //함수나 메서드 선언 시에는 function 키워드를 사용한다.
+        //각주의 //는 한 줄 각주, /*  */는 여러 줄 각주로 사용함
+        //출력의 방향은 alert("출력할내용"), document.write(), 선택자.innerHTML,
+        //console.log("출력할내용")
+        //이벤트를 연결할 경우는 
+        // 선택자.addEventListener("이벤트명", function)(){
+        //             실행할명령 및 내용 
+        // });
+        //특정 요소를 선택할 경우는
+        //아이디를 활용하여 선택 document.getElementById("아이디명")
+        //클래스를 활용하여 선택 document.getElementsByClassName("클래스명")
+        //태그를 활용하여 선택 document.getElementsByTagName("태그명")
+        //사용자 선택자(CSS선택자)처럼 선택 document.querySelector("CSS선택자")
+        //예를 들어 아이디가 btn1인 요소를 클릭했을 때의 요소를 선택하고, 
+        //이벤트를 연결하려면
+        //document.getElementById("btn1").addEventListener("click", function()){
+        //      alert("버튼 1을 클릭했습니다.") 
+        //});
+    </script>
+</head>
+<body>
+    <!-- 예를 들어 아이디가 btn1인 요소를 클릭했을 때의 요소를 선택하고, 
+    이벤트를 연결하려면 -->
+    <script>
+    document.getElementById("btn1").addEventListener("click", function(){
+        alert("버튼 1을 클릭했습니다.") 
+    });
+    </script>
+    <!-- 아이디가 btn2인 요소를 클릭했을 때 아이디가 page1인 요소의 글자색을
+    빨강으로 변경할 경우 -->
+    <script>
+        document.getElementById("btn2").addEventListener("click", function(){
+            document.getElementById("page1").style.color = "red";
+        });
+    </script>
+    <!-- 모든 스크립트를 함수나 메서드와 같이 호출시에만 실행하는 부분을 제외하고는
+    순서대로 실행된다. -->
+    <div class="test1">
+        현재시각:
+    </div>
+    <script>
+        document.getElementById("test1").innerHtml = Date();
+    </script>
+    <!-- innerHtml은 내용물을 모두 바꾼다. 하이픈은 카멜로 바꾼다. -->
+    <script>
+        var kbs = document.getElementById("test1");
+        test1.innerHtml = Date();
+        test1.style.color = "red";
+        test1.style.fontSize = "42px";
+    </script>
+    <!-- 버튼을 누르면 날짜가 나온다. -->
+    <button id="btn1">날짜 구하기 - 선택자 이벤트</button>
+    <button id="btn2"  onclick="callDate()">날짜 구하기 - 인라인 이벤트</button>
+    <script>
+    function callDate() {
+            var test1 = document.getElementById("btn1");
+            test1.innerHtml = Date();
+            test1.style.color = "red";
+            test1.style.fontSize = "42px";
+    }
+    </script>
+</body>
+</html>
