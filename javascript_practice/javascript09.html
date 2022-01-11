@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        //int[] abc = {a,b,c,}; 가 자바의 방식이라면..
+        var key=["num", "name", "point", "style", "height", "weight"];
+        var arr=[10, "kim", 103.33, "찬", "222", "90"]; //단순 배열
+        var arrObj = Array(20, "이", "30", "좋은","100","32");
+        //Array생성자에 의한 배열선언
+        var arrObj2 =  new Array(20, "강", "30", "좋은","100","32");
+        //new 키워드에 의한 배열선언
+        document.write("<p>arr: "+(typeof arr)+"</p>");
+        document.write("<p>arrObj: "+(typeof arrObj)+"</p>");
+        document.write("<p>arrObj2: "+(typeof arrObj2)+"</p>");
+        //배열 요소를 추가하는 방법(마지막 index에 추가)
+        key.push("Address");
+        arr.push("화정동");
+        key[key.length] = "tel";
+        arr[arr.length] = "0102331223";
+        //배열 요소를 앞에 추가하는 방법
+        key.unshift("academy");
+        arr.unshift("Thejoeun");
+        //배열 요소를 특정 번째에 추가
+        key.splice(3, 0, "grade");  //0번째 인덱스부터 3번째의 위치에 ~인 값을 추가
+        key.splice(3, 0, "B");
+        //배열 요소 중 끝 요소를 제거하는 방법
+        key.pop();
+        arr.pop();
+        //배열 요소 중 맨 앞요소를 제거하는 방법
+        key.shift();
+        arr.shift();
+        //배열 요소 중 특정 번째를 제거하는 방법
+        key.splice(2, 1);
+        arr.splice(2, 1);
+        var jumArr = [90, 95, 95, 100, 75];
+        document.write(jumArr); //그냥 나온다.
+        var sortArr = jumArr.sort();    //첫문자를 기준으로 정렬한다.
+        document.write(sortArr); //정렬하여나온다.
+        
+        for(var a in arr ) {
+            document.write("<h3>"+key[a]+", "+arr[a]+"</h3>");
+        }
+
+        for(var a in arr ) {
+            document.write("<h3>"+arr[a]+", "+(typeof arr[a])+"</h3>");
+        }
+
+    </script>
+</body>
+</html>

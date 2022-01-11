@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+
+</head>
+<body>
+    <script>
+        var week = ["일", "월", "화", "수","목", "금","토"];
+        var day = new Date().getDay();
+        console.log(week[day]);
+        switch(day){
+            case 1:
+                console.log("월요일");
+                break;
+            case 2:
+                console.log("화요일");
+                break;
+            case 3:
+                console.log("수요일");
+                break;
+            case 4:
+                console.log("목요일");
+                break;
+            case 5:
+                console.log("금요일");
+                break;
+            case 6:
+                console.log("토요일");
+                break;
+            default:
+                console.log("일요일");
+        }
+    var login = confirm("로그인 하시겠습니까?");
+    if(login) document.write("로그인 했습니다.");
+    else document.write("로그인을 취소했습니다.");
+    //alert("알림 메시지"), confirm("의사를 확인하는 메시지"), 
+    //prompt("입력안내 메시지");
+    var sum=0;
+    for(var i=0; i<=10; i++) {    //var 혹은 let이 오며 const는 값이 바뀔수 없다.
+        document.write("<h3>"+i+"</h3>");
+        sum +=i;
+    }
+    document.write("<h1>합산결과 : "+sum+"</h1>")
+
+    //for (var 변수명 in 객체또는 배열명) {배열명[변수명];} 변수명의 역할은 인덱스의 역할
+    var arr = [100,92,95];
+    for (var i in arr) {    //var i=0; i<arr.length; i++
+        document.write("<h3>점수 : "+arr[i]+"</h3>");
+    }
+
+
+    //for (var 변수명 of 객체또는 배열명) {변수명;} 변수명의 역할은 해당 번째의 값
+    var arr = [100,92,95];
+    for (var i of arr) {    //var i=0; i<arr.length; i++
+        document.write("<h3>점수 : "+i+"</h3>");
+    }
+    //Set: 중복을 허용하지 않고 순서(index) 없이 무작위로 출력됨
+    var set1 = new Set([100, 85, 100, 90, 85, 95]);
+    for (var a of set1) {
+        document.write("<p>값:"+a+"</p>")
+    }
+    
+    var j = 0;
+    var hap = 0;
+    while(j<10) {  //while(조건식) {증감식; 계산식;}
+        j++;
+        hap+=j;
+    }
+    document.write("<p>j의 1부터 10까지의 합산 결과: "+hap+"</p>");
+
+    var k=0;
+    var res=0;
+    do {    //최소 1번 이상의 실행 회수를 보장한다. 실행을 먼저 하고, 조건을 비교.
+        k++;
+        res+=k;
+    }  while(k>10);
+    document.write("<p>"+res+"</p>")
+
+    //do {실행문;} while (조건식);
+    for (var a=0;a<100;a++) {if(a%2!=0) {continue;} sum+=a;}
+    //무한 반복을 벗어나기
+    //for(;;) {if(a>10) {break} a++ sum+=a; }
+
+    </script>
+</body>
+</html>

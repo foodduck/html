@@ -10,6 +10,72 @@
     <script>
         //제어문: 조건문(if, switch), 반목문(for, while, do~while), 기타제어문
         //(break, continue)
+
+        var jum1 = parseInt(prompt("전산점수를 입력하세요"));
+        var jum2 = parseInt(prompt("프로그래밍점수를 입력하세요"));
+        var jum3 = parseInt(prompt("웹점수를 입력하세요"));
+        var name = prompt("성명을 입력해주세요");
+        //parseInt 처리가 form 태그처럼 필요하다.
+        var tot = jum1 + jum2 + jum3;
+        var avg = tot/3;
+        var pan = "탈락";
+        if(avg>=80) pan = "합격";   //단순if
+        console.log("단순IF결과: "+pan);
+
+        if(avg>=80) {   //if~else~
+            console.log("합격입니다.");
+        } else {
+            console.l;og("불합격입니다.");
+        }
+
+        var grade="";
+
+        if(avg>=90) { //if~else if
+            grade="A";
+            console.log("A");
+        } else if(avg>=80) {
+            grade="B";
+            console.log("B");
+        } else if(avg>=70) {
+            grade="C";
+            console.log("C");
+        } else {
+            grade="D";
+            console.log("D");
+        }
+
+        if(jum1>=60 && jum2>=60 && jum3>=60) {  //if(조건이 and)
+            console.log("모든 과목 통과");
+        } else {
+            console.log("과락");
+        }
+
+        if(jum1>=95 || jum2>=95 || jum3>=95) {  //if(조건이 or)
+            console.log("과목우수자");
+        }
+
+        var hak;
+
+        switch(grade) {
+            case "A":
+                hak=4.5;
+                break;
+            case "B":
+                hak=4.0;
+                break;
+            case "C":
+                hak=3.5;
+                break;
+            default:
+                hak=3.0;
+                break;
+
+        }
+
+        console.log("전산점수 : "+jum1);
+        console.log("프로그래밍 점수 : "+jum2);
+        console.log("웹점수 : "+jum3);
+        console.log("이름:"+name+", 총점:"+tot+", 평균:"+avg+"학점"+hak);
     </script>
 </body>
 </html>
