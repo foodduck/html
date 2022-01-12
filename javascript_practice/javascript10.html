@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <h2>함수 - 사용자 정의 함수, 자바스크립트 내장전역함수</h2>
+    <script>
+        // 사용자 정의함수 - 개발자가 매개변수와 리턴의 유무에 따라 정의해서
+        //사용하는 것으로 종류가 나누어짐
+        // function fnc1() {
+        //     alert("함수1");
+        // }
+        // var fnc2 = function() {
+        //     alert("함수2");
+        // }
+        //모든 함수는 정의부와 호출부가 나누어져 있어, 정의부는 어디에 있든 관계없지만
+        //호출부의 순서에 따라 실행 순서가 결정됨
+        //num, name, age를 객체의 속성(필드) 와 메서드로 이루어짐
+        // var obj1 = {num:1, name:"강", age=12, method1: function
+        // (this) {alert(this.num+this.name);
+            
+        //     }
+        // };
+        // obj1.num = 2;   //속성(필드)
+        // obj1.name = "김";
+        // obj1.age = 33;
+        // obj1.method1(); //메서드: 특정 객체에 속해 있는 함수
+
+        //자바스크립트의 내장 전역함수
+        //eval()
+    </script>
+    <input type="text" id="indata" name="indata" value=""><br>
+    <input type="button" name="num1" id="num1" value="1"/>
+    <input type="button" name="num2" id="num2" value="2"/>
+    <input type="button" name="num3" id="num3" value="3"/><br>
+    <input type="button" name="num4" id="num4" value="4"/>
+    <input type="button" name="num5" id="num5" value="5"/>
+    <input type="button" name="num6" id="num6" value="6"/><br>
+    <input type="button" name="num7" id="num7" value="7"/>
+    <input type="button" name="num8" id="num8" value="8"/>
+    <input type="button" name="num9" id="num9" value="9"/><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" name="num0" id="num0" value="0"/>
+    <input type="button" value="CE" name="ce" id="ce" style="background-color: red; color:white"/><br>
+    <br>
+
+    <input type="button" value="+" name="plus" id="plus"/>
+    <input type="button" value="-" name="minus" id="minus"/>
+    <input type="button" value="*" name="multiply" id="multiply"/>
+    <input type="button" value="/" name="divide" id="divide"/> 
+    <input type="button" value="=" name="result" id="result"/><br>
+    <script>
+        var indata = document.getElementById("indata");
+        var num1 = document.getElementById("num1");
+        var num2 = document.getElementById("num2");
+        var num3 = document.getElementById("num3");
+        var num4 = document.getElementById("num4");
+        var num5 = document.getElementById("num5");
+        var num6 = document.getElementById("num6");
+        var num7 = document.getElementById("num7");
+        var num8 = document.getElementById("num8");
+        var num9 = document.getElementById("num9");
+        var num0 = document.getElementById("num0");
+        var plus = document.getElementById("plus");
+        var minus = document.getElementById("minus");
+        var multiply = document.getElementById("multiply");
+        var divide = document.getElementById("divide");
+        var ce = document.getElementById("ce");
+
+        num1.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num2.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num3.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num4.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num5.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num6.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num7.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num8.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num9.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        num0.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        plus.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        minus.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        multiply.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        divide.addEventListener("click", function(){
+            indata.value = indata.value + this.value;
+        });
+        ce.addEventListener("click", function(){
+            indata.value = "";
+        });
+        result.addEventListener("click", function(){
+            indata.value = eval(indata.value);
+            //isFinite(데이터) 가 계산가능한결과(숫자) true, false
+            /* if (isFinite(data)) {
+                indata.balue = data;
+              } else {
+                  alert("계산에 오류가 있거나 입력이 잘못되었습니다.")
+              }
+            */
+           //isNaN(데이터) : 계산이불가능한 결과(숫자가 아님)
+           //계산이 불가능한 형태 : 문자열, undefined(null), 0으로 나눌수 없는 경우
+            if (isNan(data)) {
+                alert.value = data;
+            }
+            //전역함수: parseInt(), parseFloat(), eval() 등
+        });
+    </script>
+</body>
+</body>
+</html>
