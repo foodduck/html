@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM 객체</title>
+</head>
+<body>
+    <div onclick="openChild()">창 열기</div>
+    <div onclick="closeChild()">창 닫기</div>
+    <script>
+        //BOM(Browser Object Model) 객체(Window의 하위객체) : 
+        //Window, Screen, Location, History,navigator,Document(DOM) 객체
+        //브라우저에 입력 가능하거나 응용 가능한 기타 객체: Timer(Interval),
+        //Dialog(대화 상자)
+        /*var*/ newWindow = window = window.open("팝업창으로 열 파일이름", "팝업창제목", "창옵션")
+        //newWindow.close();
+        
+        var newWindow;
+        function openChild() {
+            newWindow = window.open("", "", "");
+        }
+        function closeChiid() {
+            newWindow.close();
+        }
+        //인라인 이벤트
+    </script>
+
+    <!--  -->
+
+    <div id="open_btn">창 열기</div>
+    <div id="close_btn">창 닫기</div>
+
+    <script>
+        var open_btn = document.getElementById("open_btn")
+        var close_btn = document.getElementById("close_btn")
+        open_btn.addEventListener("click", function(){
+            openChild();
+        }); 
+        close_btn.addEventListener("click", function(){
+            closeChild();
+        }); 
+        //핸들러 이벤트
+    </script>
+
+    <script>
+        for(var key in window) {
+            document.write(key+": "+window[key]+"<br>");
+        }
+    </script>
+</body>
+</html>

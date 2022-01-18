@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM 객체 - location 객체</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+</head>
+<body>
+    <select name="sel" id="sel">
+        <option value="">선택 안함</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://www.daum.net">다음</option>
+        <option value="http://www.nate.com">네이트</option>
+    </select>
+    <button id="btn1">새로고침</button>
+    <button id="btn2">뒤로2번가기</button>
+    <button id="btn3">앞으로2번가기</button>
+    <script>
+        $(function(){
+            for(var key in location) {
+                console.log(key+":"+location[key]);
+            }
+            console.log("--------------history---------------");
+            for(var key in history) {
+                console.log(key+":"+history[key]);
+            }
+            $("#sel").change(function(){
+                //현재 탭에서 바뀜 
+                //location.href = $(this).val();
+                //location.assign(url);
+                //location.assign(url);
+                //새창으로 열기
+                var url=$(this).val();
+                window.open(url,"제목");
+            });
+            $("#btn1").click(function(){
+                location.reload();
+            });
+            $("#btn2").click(function(){
+                history.back();
+            });
+            $("#btn3").click(function(){
+                //history.go(-2); //뒤로가기 2번
+                history.go(2);  //앞으로가기 2번
+
+            });
+        });
+    </script>
+</body>
+</html>
