@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM 객체 : screen, window</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <script>
+        for(var key in screen) {
+                console.log(key+":"+screen[key]);
+        }
+        winsize();
+        window.addEventListener('resize', function() {winsize(); });
+        function winsize() {
+            document.write("화면의 폭: "+screen.width+"<br>");
+            document.write("화면의 높이: "+screen.height+"<br>");
+            document.write("창의 폭: "+window.outerWidth+"<br>");
+            document.write("창의 높이: "+window.outerHeight+"<br>");
+        }
+       
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator 객체를 활용한 GPS 사용</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <script>
+    // function getLocation() {
+    //     if(navigator.getLocation) { //GPS를 지원한다면
+    //         navigator.geolocation.getCurrentPosition(function(position){
+    //             console.log("위도: "+position.coords.latitude);
+    //             console.log("경도: "+position.coords.longitude);
+    //         }, function(error) {
+    //             console.error(error);
+    //         }, {
+    //             enableHighAccuracy: false,
+    //             maximumAge: 0,
+    //             timeout:Infinity
+    //         });
+    //     } else {
+    //         console.log("GPS 기능을 지원하지 않음");
+    //     }
+    // }
+    // getLocation();
+    $(document).ready(function(){
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){
+                console.log("위도: "+position.coords.latitude);
+                console.log("경도: "+position.coords.longitude);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
