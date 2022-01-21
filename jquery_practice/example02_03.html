@@ -14,10 +14,10 @@
          var len = $tar.length;
          var txt = "";
          $.each($tar, function(){
-            txt+=$(this).text()+", "
+            txt+=$(this).text()+", ";
+            $("#res").text("요소의 개수: "+len+" ,텍스트 :"+txt);
          });
       });
-      $("#res").text("요소의 개수: "+len+" ,텍스트 :"+txt);
    });
 </script>
 </head>
