@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery의 개요</title>
+    <!-- jQuery.js 연결 방법: -->
+    <!-- 1)cdn 연결-->
+    <!-- <script src="https://code.jquery.com/jquery-latest.js"></script> -->
+    <!-- 2)외장파일 연결-->
+    <script src="../js/jquery.js"></script>
+    <!-- jQuery를 활용하는 이유: 누구든지 쉽게 DOM 조작이나 이벤트, ajax 등을 구현하기 위해 활용 -->
+    <script>
+        document.getElementById("header").addEventListener("click", function(){
+            //동작 기술(코드가 너무 길어지고, DOM조작이 힘들다.)
+        });
+
+        $("header").click(function(){
+            //동작 기술(간단하고, DOM조작이 쉽다.)
+        });
+
+    </script>
+   <script>
+       $(document).ready(function(){
+           //해당 요소전에 실행코드를 넣을 경우 1
+           action1();
+       });
+
+       function action1() {
+            //해당 요소전에 실행코드를 넣을 경우 2
+           $("tar").text("hello").css("line-height", "300px");
+       }
+   </script>
+   
+
+</head>
+<body>
+    <div id="tar"></div>
+    <script>
+    $(function(){
+        $("#tar").addClass("on");
+    });
+    </script>
+</body>
+</html>
