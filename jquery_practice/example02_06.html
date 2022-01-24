@@ -8,7 +8,12 @@
 </style>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+//모든 엘리먼트에 글자색을 진회색(#444)로 하고
+//em 바로 다음에 나오는 a요소에 글자색을 red로 하고 textstyle 클래스를 추가 적용하기
+$(document).ready(function(){
+   $("*").css("color","#444");
+   $(".result1").text($("em+a").css("color","red").addClass("textstyle").length);
+});
 </script>
 </head>
 <body>

@@ -8,6 +8,12 @@ em { font-size:20pt; line-height: 20pt;   margin:20px;   color:blue;  }
 </style>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//p의 후손 em과 div의 후손 em의 개수를 클래스가 result1인 곳에 출력
+//p의 자식 em과 div의 자식 em의 개수를 클래스가 result2인 곳이 출력
+$(document).ready(function(){
+   $(".result1").text($("p em,div em").length);
+   $(".result2").text($("p>em,div>em").length);
+});
 
 </script>
 </head>

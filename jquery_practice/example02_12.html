@@ -9,6 +9,19 @@ span { color: blue; }
 </style>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//각 그룹의 3번째 li 요소에 글자색을 빨강으로 하기
+//짝수번째 li 요소에 배경색을 골드로 하기
+//홀수번째 li 요소에 배경색을 실버로 하기
+
+   $(document).ready(function(){
+      $("li:nth-child(3n)").css("color", "red");
+   });
+   $(document).ready(function(){
+      $("li:nth-child(2n)").css("background-color", "gold");
+   });
+   $(document).ready(function(){
+      $("li:nth-child(2n-1)").css("background-color", "silver");
+   });
 
 </script>
 </head>
