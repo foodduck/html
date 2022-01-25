@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 어트리뷰트 값 제거하기</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//button을 클릭하면,  img요소의 src속성을 제거하기 -> $("선택자").removeAttr("속성명");
+    $(function(){
+        $("button").click(function(){
+            $("img").removeAttr("src");
+            //$("img").removeProp("src"); form 요소일 경우 checked, disabled,
+            //enabled, autofocus, required 와 같이 속성에 값이 없는 경우에 활용한다.
+        });
+    });
+
+</script>
+</head>
+<body>   
+ <button> 어트리뷰트 값 제거하기 </button> 
+ <img src="../img/bg_section0_v3.jpg" title="똘이군" alt="puppy picture">  
+</body>
+</html>

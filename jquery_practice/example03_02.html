@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 집합들을 한 번에 처리하기</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//img 요소의 src속성에 랜덤이미지 URL을 무작위로 넣고, title에 랜덤이미지1,랜덤이미지2...
+// 와 같이 속성을 추가 - each문과 attr(), index()를 활용 
+//https://picsum.photos/200/300
+
+   $(document).ready(function(){
+
+      $("img").each(function(){
+         $(this).attr({"src":"https://picsum.photos/200/300", "alt":"랜덤이미지"+($(this).index()+1), "title":"랜덤이미지"+($(this).index()+1)})
+      });
+   });
+</script>
+</head>
+<body>
+   <center>
+      <img /> <img /> <img /> 
+   </center>
+</body>
+</html>

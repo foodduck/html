@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 어트리뷰트 값을 가져오고, 설정하기</title>
+<style>
+   img { padding:20px; } 
+   div { color: blue;  font-size: 30px  }
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+   //태그의 속성:attribute, css의 속성: properties
+   $(document).ready(function(){
+      //$("img").attr("src","http://placehold.it/100x100/333").attr("alt","임시이미지");
+      $("img").attr({"src":"http://placehold.it/100x100/999","alt":"임시이미지2"});
+      $("img").each(function(){
+         $("div b").append("<br>"+$(this).attr("title"));
+      });
+   });
+   // 기본 메서드 : css(), attr(),   addClass(), text(), html(), val()
+   // css(), attr(), 파라미터를 하나만 입력하면 getter, 2개 입력하면 setter
+   // addClass(), text(), html(), val(): 파라미터를 입력하면 setter,
+   // 파라미터를 입력하지 않으면 getter
+</script>
+</head>
+<body>
+<center>
+   <img /> <img />
+   <div><b>어트리뷰트 연습</b></div>
+</center>
+</body>
+</html>

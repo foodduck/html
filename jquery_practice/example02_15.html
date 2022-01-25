@@ -7,9 +7,19 @@
    div { padding: 5px 5px 5px 5px }
     .item{float:left; width:100px; }
 </style>
-<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//폼 요소의 button 요소에는 크기 w100 h40 lh40, 배경색 검은색, 글자색 흰색, 글자 가운데 정렬
+//폼 요소의 text 요소에는 크기 w200 h40 lh40, 
+//테두리 색상 #666의 1px 실선, 안쪽 왼쪽 여백 14px, 배경색 투명, 글자색 #666
+//폼 요소의 password 요소에는 크기 w200 h40 lh40, 
+//테두리 오렌지(#f60)의 1px 실선, 안쪽 왼쪽 여백 14px, 배경색 투명, 글자색 #f60
 
+   $(document).ready(function(){
+      $("input:button").css({'width':'100px', 'height':'40px', 'line-height':'40px','background-color':'black', 'color':'white', 'text-align':'center'});
+      $("input:text").css({'width':'200px', 'height':'40px', 'line-height':'40px','border':'solid 1px #666','padding-left':'14px','background-color':'transparent', 'color':'#666'});
+      $("input:password").css({'width':'200px', 'height':'40px', 'line-height':'40px','border':'solid 1px #f60','padding-left':'14px','background-color':'transparent', 'color':'#f60'});
+   });
 </script>   
 </head> 
 <body>
