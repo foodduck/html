@@ -5,7 +5,14 @@
 <title></title>
 <script src="../js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+//div 요소의 배경색을 노랑, 그의 자식 em 요소에 빨강으로 하고, 
+//p요소의 배경색을 파랑으로 변경(하나의 명령줄로)
+//end() 탐색 메서드는 version 1.8 을 초과하면 3.0 이상은 적용되지 않음
+//end() : 앞서 선탟한 요소는 더 이상 선택하지 않고 그 다음 요소를 추가할 때 활용
+//andSelf() : 중간에 선택한 요소는 무시하고, 앞서서 선택한 요소를 다시 선택할 때 활용
+	$(document).ready(function(){
+		$("div").css("background-color","yellow").children("em").css("background-color", "red").andSelf().css("background-color","blue");
+	});
 </script>
 </head>
 <body>

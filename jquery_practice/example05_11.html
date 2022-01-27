@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트의 현재 위치 알아내기</title>
+<style type="text/css">
+div.abs { width: 50px; height: 50px; position: absolute;
+     left:220px; top:35px; background-color: green; 
+     cursor: pointer;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//div.abs 박스의 위치를 (x, y)로 result 에 표시하기
+// screenX, screenY : 화면을 기준으로 한다. 
+// clientX, clientY : 문서를 기준으로 한다.
+// pageX, pageY : 페이지를 기준으로 한다.
+//.abs에 마우스포인터를 올리면, .abs 박스의 위치를
+//화면기준 위치, 문서기준 위치, 페이지 기준 위치를 x, y 형식으로 표시
+     $(".abs").mousemove(function(e){   //event객체
+          var txt1 = "화면 기준 위치 : ("+e.screenX+", "+e.screenY+")";
+          var txt2 = "문서 기준 위치 : ("+e.clientX+", "+e.clientY+")";
+          var txt3 = "페이지 기준 위치 : ("+e.pageX+", "+e.pageY+")";
+          $("#result").html(txt1+"<br>"+txt2+"<br>"+txt3+"<br>");
+     });
+     //offsetX = $("선택자").offset().left
+     //offsetY = $("선택자").offset().top
+     //.abs 요소의 위치 구하기
+     var obj = $(".abs").offset();
+     $("#result").html("("+obj.left+", "+obj.top+")");
+</script>
+</head>
+<body>
+<div id="result"></div>
+<div class="abs"></div>
+</body>
+</html>
+
