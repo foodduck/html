@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>더블 클릭 이벤트</title>
+<style type="text/css">
+img{ 
+   width: 120px; height: auto;	border-radius: 51%;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+   //더블 클릭 시 이미지가 2배 커지게 한다.
+   $(document).ready(function(){
+      $("img").dblclick(function(e){
+         $(e.target).width($(e.target).width()*2)
+      });
+   });
+</script>
+</head>
+<body>   
+   <img src="image3.jpg">
+</body>
+</html>

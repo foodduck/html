@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필요 없는 이벤트 제거하기 </title>
+<style type="text/css">
+img{ 
+   width: 140px; height: auto;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//클릭시 이벤트가 2배로 커짐
+//on() -> off(), bind() -> unbind()
+//클릭시 3번만 이벤트를 작성시키고, 네번째 클릭부터는 동작하지 않게 함
+   $(document).ready(function(){
+      var cnt = 0;
+      $("img").bind("click", function(e){
+         cnt++;
+         if(cnt<4) {
+            $(e.target).width($(e.target).width()*2);
+         } else {
+            $(e.target).unbind();
+         }
+      });
+   });
+</script>
+</head>
+<body>   
+   <img src="image7.jpg">
+</body>
+</html>

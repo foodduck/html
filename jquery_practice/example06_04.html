@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>일회성 이벤트 만들기</title>
+<style type="text/css">
+img{ 
+   width: 140px; height: auto;	
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+   //이미지를 클릭하면, 한 번만 2배로 이미지가 커지도록 함
+   $(document).ready(function(){ //ver 1.9 이상은 one 메서드가 제거됨
+      $("img").one("click", function(e){
+         $(e.target).width($(e.target).width()*2);
+      });
+   });
+</script>
+</head>
+<body>   
+   <img src="./image8.jpg">
+</body>
+</html>

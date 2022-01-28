@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클릭할 때마다 서로 다른 동작함수 호출하기</title>
+<style type="text/css">
+img{ 
+   width: 200px; height: auto; transition-duration: 1000ms;	
+}
+
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.js"></script>
+<script type="text/javascript">
+//이미지 클릭 시 마다 다른 동작을 하도록 하기
+//첫 번째 클릭 시 빨강 실선 테두리 5px로 
+//두 번째 클릭 시 파랑 점선 테두리 5px로
+//세 번재 클릭 시 초록 네모점선 테두리 5px로 
+   $(document).ready(function(){
+      $("img").toggle(
+         function(e){
+            $(e.target).css("border","solid red 5px");
+         },
+         function(e){
+            $(e.target).css("border","dotted blue 5px");
+         },
+         function(e){
+            $(e.target).css("border","dashed green 5px");
+         }
+      )
+   });
+</script>
+</head>
+<body>
+	<img src="image3.jpg">
+</body>
+</html>

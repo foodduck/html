@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하나의 DOM 엘리멘트에 여러 개의 이벤트 적용하기</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//img요소에 마우스포인터를 올리면, src 속성의 값이 image5.jpg 로 변경되고,
+//마우스포인터가 빠져 나가면, src 속성의 값이 image6로 변경되며,
+//클릭시에는 image7.jpg로 변경되는 종합 이벤트 구현
+$(document).ready(function(){
+   $("img").bind({
+      "mouseover": function(){
+         $(this).attr("src","./image5.jpg")
+      },
+      "mouseout": function(){
+         $(this).attr("src","./image6.jpg")
+      },
+      "click": function(){
+         $(this).attr("src","./image7.jpg")
+      }
+   });
+});
+</script>
+</head>
+<body>   
+   <img src="./image4.jpg">
+</body>
+</html>

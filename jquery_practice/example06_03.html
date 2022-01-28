@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 객체</title>
+<style type="text/css">
+img{ 
+   width: 140px; height: auto;		
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+      //img를 더블클릭하면 1.5배씩 커질 수 있도록 구현하되 이벤트 타겟을 받아서 구현
+      $("img").bind("dblclick", function(e){
+         var $t = $(e.target);   //$(this)
+         $t.width($t.width()*1.5);
+      });
+   });
+</script>
+</head>
+<body>   
+   <img src="./image8.jpg">
+</body>
+</html>

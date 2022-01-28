@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 위임하기</title>
+<style type="text/css">
+ p { background:yellow; font-weight:bold; 
+     cursor:pointer; padding:5px; } 
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.js"></script>
+<script type="text/javascript">
+//p 요소를 클릭하면, 다음 요소로 클릭한 p 요소를 추가
+//첫번째 p요소를 클릭하면 이벤트가 작동하지만, 복제된 p 요소를 클릭하면 작동하지 않는다.
+//이벤트의 위임/상속 메서드: live()
+//bind(), unbind(), on(), off(), one(), live() : 종합 이벤트 메서드
+//toggle() : 클릭 시
+//$(event.target) : 이벤트가 걸려있는 요소
+    $(document).ready(function(){
+        $("p").live("click", function(){
+            $(this).after("<p>"+$(this).html()+"</p>");
+        });
+    });
+</script>
+</head>
+<body>
+	 <p>Click me!</p> 
+</body>
+</html>

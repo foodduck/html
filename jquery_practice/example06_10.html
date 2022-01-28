@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스가 움직인 곳의 위치 알아내기</title>
+<style type="text/css">
+div{ width: 200px; height: 150px; 
+     background-color: red; cursor: pointer;
+     margin: 30px
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+   //div 요소에 마우스 포인터를 움직이면: mousemove()
+   //마우스 포인터의 가로 위치는 p 의 첫 요소에
+   //세로 위치는 p의 마지막 요소에(x, y) 표기형식으로 출력
+   $(document).ready(function(){
+      $("div").mousemove(function(e){
+         var txt1 = "화면 기준 위치 : ("+e.screenX+", "+e.screenY+")";
+         var txt2 = "브라우저 기준 위치 : ("+e.clientX+", "+e.clientY+")";
+         var txt3 = "페이지 기준 위치 : ("+e.pageX+", "+e.pageY+")";
+         var txt4 = "요소 기준 위치 : ("+e.offsetX+", "+e.offsetY+")";
+         $("p:first").html(txt1);
+         $("p.middle").html(txt2);
+         $("p.third").html(txt3);
+         $("p:last").html(txt4);
+         
+      });
+   });
+</script>
+</head>
+<body>   
+   <div></div>
+   <p></p>
+   <p class="middle"></p>
+   <p class="third"></p>
+   <p></p>
+</body>
+</html>
