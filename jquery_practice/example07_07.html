@@ -14,7 +14,14 @@ div#blue {  background: #00f;}
 </style>
 <script src="../js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
-
+//red의 불투명도 0.4, green의 불투명도 0.7, blue의 불투명도 0.5
+  $(document).ready(function(){ //show(), hide(), toggle(), animate(), slideDown(), 
+    //slideUp(), slideToggle(), fadeIn(), fadeOut(), fadeToggle(), fadeTo()
+    // 위의 메서드를 delay(), stop() 할 수 있다.
+    $("#red").delay(500).fadeTo(1000,0.4);
+    $("#green").delay(1000).fadeTo(1500,0.7);
+    $("#blue").delay(1500).fadeTo(2000,0.5);
+  });
 </script>
 </head>
 <body>

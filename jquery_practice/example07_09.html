@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사용자 효과</title>
+<title>사용자 효과-번호별 버튼title>
 <style>
 #region { 
   position: relative; width: 200px; height:200px;
@@ -35,16 +35,19 @@
 	var mx = wd*(len-1)*-1;					//슬라이딩의 최대 이동폭
 	$("#images").width(wd*len);				//이미지 박스를 개수에 따라 자동으로 크기 조절
 	$(document).ready(function(){
-		$("leftbtn").click(function(){
-			var ml = parseInt($("images").css("margin-left"));	//현재 이미지 박스의 왼쪽 마진을 계산
+        $(".btn_box button").each(function(){
+            $(this).text($(this).index()+1);
+        });
+		$(".leftbtn").click(function(){
+			var ml = parseInt($("#images").css("margin-left"));	//현재 이미지 박스의 왼쪽 마진을 계산
 			if(ml<0) {
-				$("images").not(":animated").animate({"margin-left":"+="+wd+"px"}, 300);
+				$("#images").not(":animated").animate({"margin-left":"+="+wd+"px"}, 300);
 			}
 		});
-		$("rightbtn").click(function(){
-			var ml = parseInt($("images").css("margin-left"));
+		$(".rightbtn").click(function(){
+			var ml = parseInt($("#images").css("margin-left"));
 			if(ml>mx) {
-				$("images").not(":animated").animate({"margin-left":"-="+wd+"px"}, 300);
+				$("#images").not(":animated").animate({"margin-left":"-="+wd+"px"}, 300);
 			}
 		});
 	});
@@ -54,15 +57,18 @@
 <body>
 	<div id="region">
 		<div id="images">
-			<a href="#"><img src="a001.jpg" id="img1" /></a> 
-			<a href="#"><img src="a002.jpg" id="img2" /></a>
-			<a href="#"><img src="a003.jpg" id="img3" /></a>
-			<a href="#"><img src="a004.jpg" id="img4" /></a>
+			<a href="#"><img src="a001.jpg" id="img1" title="불편한 편의점"/></a> 
+			<a href="#"><img src="a002.jpg" id="img2" title="the midnight library"/></a>
+			<a href="#"><img src="a003.jpg" id="img3" title="꿈백화점 1"/></a>
+			<a href="#"><img src="a004.jpg" id="img4" title="꿈백화점 2"/></a>
 		</div>
 	</div>
 	<div id="direction">
 		<button class="leftbtn">&laquo;</button>
 		<button class="rightbtn">&raquo;</button>
 	</div>
+    <div id="btn_box">
+        //요소의 개수만큼 버튼을 추가
+    </div>
 </body>
 </html>
