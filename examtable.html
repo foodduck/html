@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        * {margin:0; padding:0}
+        body, html {width:100%}
+        ul {list-style:none;}
+        a {text-decoration:none;}
+        .wrap {margin: 0 auto; width:1200px; clear:both;}
+        table {border-collapse: none;}
+        .hd {width:1200px; height:100px; background-color: rgb(156, 182, 231);}
+        .hd.on { background-color:rgba(255,255,255,0.8); position:fixed; }
+        .hd.on a { color:#333; }
+        .menu {width:100%; height:50px;}
+        .menu li {float:left; width:25%; height:50px;}
+        .content {clear:both; width:100%;}
+        .content:after {content:""; display:block; clear:both;}
+        .page {clear:both; width:100%; height:100vh; overflow:hidden; text-align: center;
+        position:relative; background-repeat: no-repeat; background-position: center center; background-size:auto cover;}
+        .page:after {content:""; display:block; clear:both;}
+
+        .quick {position: absolute; width:100px; height:200px; left:30px;}
+        /* background-attachment: 화면에 붙어 있게 됨 */
+        #page1 {background-color: rgb(224, 135, 135);}
+        #page2 {background-color: rgb(193, 221, 141); background-attachment:fixed;}
+        #page3 {background-color: rgb(153, 190, 224);}
+        #page4 {background-color: rgb(217, 164, 238);}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <nav class="menu">
+                <ul>
+                    <li><a href="">메인</a></li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <section class="page" id="page1">
+                <h2 class="page_tit">페이지 제목 1</h2>
+                <div class="page_wrap">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                        <li><img src="" alt=""></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page" id="page2">
+                <h2 class="page_tit">페이지 제목 2</h2>
+            </section>
+            <section class="page" id="page3">
+                <h2 class="page_tit">페이지 제목 3</h2>
+            </section>
+            <section class="page" id="page4">
+                <h2 class="page_tit">페이지 제목 4</h2>
+            </section>
+        </div>
+        <div class="quick">
+            <ul>
+                <li>메뉴</li>
+                <li>첫번째</li>
+                <li>두번째</li>
+                <li>세번째</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            var ht = $(".page:last-child").height();
+            $(window).scroll(function(){
+                var sc_top = $(window).scrollTop();
+                console.log(sc_top);
+                if(sc_top>=200) {
+                    $(".hd").addClass("on");
+                } else {
+                    $(".hd").removeClass("on");
+                }
+                if(sc_top>=ht) {
+                    $(".quick").fadeIn(300);
+                } else {
+                    $(".quick").fadeOut(300);
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
